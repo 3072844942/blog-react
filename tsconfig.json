@@ -8,5 +8,9 @@
   },
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "src",
+    "type.d.ts"//配置的.d.ts文件
   ]
 }
