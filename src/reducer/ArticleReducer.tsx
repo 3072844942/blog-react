@@ -1,5 +1,5 @@
-const articleReducer = (preState, action) => {
+const ArticleReducer = (preState, action) => {
     return preState
 }
 
-export default articleReducer
+export default ArticleReducer

@@ -8,41 +8,31 @@ import Music from "./contianer/music/Music"
 import {useEffect, useState} from "react";
 import Store from "./redux/store";
 
-import {getBlogInfo, getUserInfo} from './action/InfoAction'
+import {getBlogInfo, getUserInfo} from './action/BlogInfoAction'
 import Loading from "./components/loading/Loading";
-import axios from "axios";
+import {connect} from "react-redux";
+import Login from "./contianer/login/Login";
+import Search from "./contianer/search/Search";
 
-function App() {
-    const [isLoading, setisLoading] = useState(true)
+function App(props) {
 
+    // 这里在创建时获取信息
     useEffect(() => {
-        const usSubscribe = Store.subscribe(() => {
-            setisLoading(Store.getState().BlogInfo.isLoading)
-        })
-        return () => {
-            usSubscribe()
-        }
-    })
-
-    // 这里在创建时获取信息, 显红不是有Bug
-    useEffect(() => {
-        Store.dispatch(getBlogInfo()) // 创建时即获取博客基础信息
-        if (Store.getState().BlogInfo.isRemember === true) { // 如果存储中发现用户选择了记住密码
-            Store.dispatch(
-                getUserInfo(Store.getState().BlogInfo.username,
-                    Store.getState().BlogInfo.password
-                ))
-        }
-    })
+        props.getBlogInfo()
+        if (Store.getState().BlogInfo.isRemember === true)
+            props.login()
+    }, [])
 
     return (
         <div>
             {
-                isLoading === true ? <Loading></Loading> : <div>
+                props.isLoading === true ? <Loading></Loading> : <div>
                     {/*顶部导航栏*/}
                     <TopNavBar></TopNavBar>
                     {/*内容*/}
                     <RouterView></RouterView>
+                    {props.showLogin && <Login></Login>}
+                    {props.showSearch && <Search></Search>}
                     {/*底部*/}
                     <Footer></Footer>
                     {/*底部菜单*/}
@@ -55,4 +45,24 @@ function App() {
     );
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+    return {
+        isLoading: state.BlogInfo.isLoading,
+        showSearch: state.BlogInfo.showSearch,
+        showLogin: state.BlogInfo.showLogin
+    }
+}
+
+const mapDispatchProps = {
+    login() {
+        return getUserInfo(Store.getState().BlogInfo.username,
+            Store.getState().BlogInfo.password
+        )
+    },
+
+    getBlogInfo() {
+        return getBlogInfo()
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchProps)(App)

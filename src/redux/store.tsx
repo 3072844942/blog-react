@@ -9,8 +9,16 @@ const preloadedState = {
         userInfo: null, // 用户信息
         username: localStorage.getItem("username"),
         password: localStorage.getItem("password"),
-        isRemember: localStorage.getItem("isRemember")
-    }
+        isRemember: localStorage.getItem("isRemember"),
+        showSearch: false,
+        showLogin: false
+    },
+    // ArticleInfo: {
+    //
+    // },
+    // UserInfo: {
+    //
+    // }
 }
 
 const store = configureStore({

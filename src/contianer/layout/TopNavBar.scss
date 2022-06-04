@@ -22,17 +22,34 @@
         .floatRight {
             float: right!important;
         }
+
+        .topRouter {
+            display: flex;
+            .menusItem {
+                transition: all 100ms ease-in-out;
+                animation: show 0.1s;
+                .menuBtn {
+                    margin: 0 10px 0 10px;
+                }
+            }
+
+            .menusItem :hover {
+                color: #80c8f8;
+                transition: all 100ms ease-in-out;
+                animation: show 0.1s;
+            }
+        }
     }
 }
 
 .navColorWhite {
-     .title {
+     .title, .menuBtn{
          color: White;
      }
  }
 .navColorBlack {
     background-color: rgba(255, 255, 255, .6);
-    .title {
+    .title, .menuBtn{
         color: black;
     }
 }

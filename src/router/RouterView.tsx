@@ -19,21 +19,21 @@ const RouterList: any[] = [
         }
     },
     {
-        path: "/archive",
+        path: "/archives",
         component: loading(() => import('../components/archive/Archive')),
         meta: {
             title: "归档"
         }
     },
     {
-        path: "/album",
+        path: "/albums",
         component: loading(() => import('../components/album/Album')),
         meta: {
             title: "相册"
         }
     },
     {
-        path: "/talk",
+        path: "/talks",
         component: loading(() => import('../components/talk/Talk')),
         meta: {
             title: "说说"

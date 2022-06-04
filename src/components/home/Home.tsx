@@ -1,28 +1,19 @@
 import * as React from 'react';
 import {useEffect, useState} from "react";
 import './Home.scss'
-import store from "../../redux/store";
-import Store from "../../redux/store";
 import HomeBanner from "../../contianer/banner/HomeBanner";
+import {connect} from "react-redux";
 
-function Home() {
-
+function Home(props) {
     const [pageCover, setPageCover] = useState(null)
 
     useEffect(() => {
-        const usSubscribe = store.subscribe(() => {
-            Store.getState().BlogInfo.blogInfo.pageList.forEach(item => {
-                if (item.pageLabel === "home") {
-                    setPageCover(item.pageCover)
-                    console.log("===", item.pageCover)
-                }
-            })
+        props.blogInfo.pageList.forEach(item => {
+            if (item.pageLabel === "home") {
+                setPageCover(item.pageCover)
+            }
         })
-
-        return () => {
-            usSubscribe()
-        }
-    }, [])
+    })
 
     return (
         <div className={["Home"].join(' ')}>
@@ -32,4 +23,10 @@ function Home() {
     );
 }
 
-export default Home;
+const mapStateToProps = (state:any) => {
+    return {
+        blogInfo: state.BlogInfo.blogInfo
+    }
+}
+
+export default connect(mapStateToProps)(Home);
