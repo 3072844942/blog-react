@@ -11,6 +11,7 @@
   ],
   "include": [
     "src",
-    "type.d.ts"//配置的.d.ts文件
+    "type.d.ts",
+    "image.d.ts"
   ]
 }

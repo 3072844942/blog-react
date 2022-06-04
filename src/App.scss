@@ -1,5 +1,48 @@
 * {
+    // 消除页面浮动
     margin: 0;
     padding: 0;
+    // 禁止用户选择
     User-select: none;
+    // 建议动画效果
+    transition: all 0.8s ease-in;
+
+    /*滚动条整体样式*/
+    ::-webkit-scrollbar {
+        width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+
+    /*滚动条里面小方块*/
+    ::-webkit-scrollbar-thumb {
+
+        border-radius   : 10px;
+        background-color: skyblue;
+        background-image: -webkit-linear-gradient(
+                        45deg,
+                        rgba(255, 255, 255, 0.2) 25%,
+                        transparent 25%,
+                        transparent 50%,
+                        rgba(255, 255, 255, 0.2) 50%,
+                        rgba(255, 255, 255, 0.2) 75%,
+                        transparent 75%,
+                        transparent
+        );
+    }
+
+    /*滚动条里面轨道*/
+    ::-webkit-scrollbar-track {
+
+        box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background   : #ededed;
+        border-radius: 10px;
+    }
+}
+
+body {
+    background: linear-gradient(90deg, rgba(247, 149, 51, .1), rgba(243, 112, 85, .1) 15%, rgba(239, 78, 123, .1) 30%, rgba(161, 102, 171, .1) 44%, rgba(80, 115, 184, .1) 58%, rgba(16, 152, 173, .1) 72%, rgba(7, 179, 155, .1) 86%, rgba(109, 186, 130, .1));
+}
+
+a {
+    text-decoration: none;
 }

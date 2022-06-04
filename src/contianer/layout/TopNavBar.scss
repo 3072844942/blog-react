@@ -1,0 +1,46 @@
+.TopNavBar {
+    width: 100vw;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    z-index: 0;
+
+    .container {
+        width: 100%;
+        margin: 10px 30px 10px 30px;
+
+        .floatLeft {
+            float: left!important;
+
+            .title {
+                font-size: 20px;
+                text-shadow: 0.1rem 0.1rem 0.2rem;
+            }
+        }
+
+        .floatRight {
+            float: right!important;
+        }
+    }
+}
+
+.navColorWhite {
+     .title {
+         color: White;
+     }
+ }
+.navColorBlack {
+    background-color: rgba(255, 255, 255, .6);
+    .title {
+        color: black;
+    }
+}
+
+.navBarHide {
+    transform: translateY(-60px);
+}
+
+.navBarShow {
+    transform: translateY(0);
+}
