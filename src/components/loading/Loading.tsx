@@ -1,10 +1,16 @@
 import * as React from 'react';
 
-function Loading(props) {
+import './Loading.scss'
+
+function Loading() {
 
     return (
-        <div>
-            加载中
+        <div className="Loading">
+            <div className="point"></div>
+            <div className="point"></div>
+            <div className="point"></div>
+            <div className="point"></div>
+            <div className="point"></div>
         </div>
     );
 }

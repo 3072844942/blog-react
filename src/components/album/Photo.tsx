@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function Photo(props) {
     return (
-        <div></div>
+        <div>相册详情</div>
     );
 }
 

@@ -17,8 +17,7 @@ function Home(props) {
 
     return (
         <div className={["Home"].join(' ')}>
-            <HomeBanner pageCover={pageCover}></HomeBanner>
-            主页
+            <HomeBanner pageCover={pageCover} websiteName={props.blogInfo.websiteConfig.websiteName}></HomeBanner>
         </div>
     );
 }

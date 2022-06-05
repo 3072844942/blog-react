@@ -5,8 +5,8 @@
     // 禁止用户选择
     User-select: none;
     // 简易动画效果
-    transition: all 0.8s ease-in-out;
-    animation: show 0.8s;
+    transition: all 0.8s ease-in;
+    animation: show 1500ms;
 
     @keyframes show {
         0% {

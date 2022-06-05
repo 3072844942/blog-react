@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function ArticleList(props) {
     return (
-        <div>文章列表</div>
+        <div>分类 - </div>
     );
 }
 

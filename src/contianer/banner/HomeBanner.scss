@@ -1,0 +1,64 @@
+.HomeBanner {
+    width: 100vw;
+    height: 100vh;
+    background-size: 100%;
+    .homeDiv {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 33vh;
+        flex-wrap: wrap;
+
+        .homeTitle {
+            font: bold 100px arial;
+            color: white;
+        }
+
+        .homeIntro {
+            flex-basis: 100%;
+            border-right: 2px solid #eee;
+            color: white;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .homeIntro {
+            animation: w 4s steps(10) forwards,
+            blink 0.3s steps(1) infinite;
+            overflow : hidden;
+        }
+
+        .scrollDown {
+
+            animation: upAndDown 3s infinite;
+            .icon {
+                width: 50px;
+            }
+        }
+    }
+}
+
+
+
+@keyframes upAndDown {
+    0% {
+        top: 0;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        margin-top: 320px;
+    }
+    50% {
+        top: -16px;
+        opacity: 1;
+        filter: none;
+        margin-top: 280px;
+    }
+    100% {
+        top: 0;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        margin-top: 320px;
+    }
+}

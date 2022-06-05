@@ -5,6 +5,8 @@
     display: flex;
     position: fixed;
     z-index: 0;
+    transition: none;
+    animation: none;
 
     .container {
         width: 100%;

@@ -10,6 +10,15 @@ const infoReducer = (preState, action) => {
         case "getUserInfo":
             newState.userInfo = action.payload
             return newState
+        case "showLogin":
+            newState.showLogin = true
+            return newState
+        case "showSearch":
+            newState.showSearch = true
+            return newState
+        case "getIntro":
+            newState.intro = action.payload
+            return newState
         default:
             return {...preState}
     }

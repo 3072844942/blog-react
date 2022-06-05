@@ -18,9 +18,12 @@ function App(props) {
 
     // 这里在创建时获取信息
     useEffect(() => {
-        props.getBlogInfo()
-        if (Store.getState().BlogInfo.isRemember === true)
-            props.login()
+        setTimeout(() => {
+            props.getBlogInfo()
+            if (Store.getState().BlogInfo.isRemember === true)
+                props.login()
+        }, 800)
+
     }, [])
 
     return (
@@ -31,16 +34,19 @@ function App(props) {
                     <TopNavBar></TopNavBar>
                     {/*内容*/}
                     <RouterView></RouterView>
+                    {/*登录框*/}
                     {props.showLogin && <Login></Login>}
+                    {/*搜索框*/}
                     {props.showSearch && <Search></Search>}
-                    {/*底部*/}
-                    <Footer></Footer>
                     {/*底部菜单*/}
                     <Menu></Menu>
                     {/*音乐盒*/}
                     <Music></Music>
+                    {/*底部*/}
+                    <Footer></Footer>
                 </div>
             }
+            {/*<Loading></Loading>*/}
         </div>
     );
 }

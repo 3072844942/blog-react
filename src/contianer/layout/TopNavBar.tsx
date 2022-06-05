@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom";
 import './TopNavBar.scss'
 import '../../assets/css/iconFont.css'
 import {connect} from "react-redux";
+import {showLogin, showSearch} from "../../action/moduleAcion";
 
 function BlogNavLink(props) {
     return (
@@ -87,10 +88,10 @@ const mapStateToProps = (state:any) => {
 
 const mapDispatchToProps = {
     showSearch() {
-
+        return showSearch()
     },
     showLogin() {
-
+        return showLogin()
     }
 }
 

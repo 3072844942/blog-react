@@ -11,7 +11,8 @@ const preloadedState = {
         password: localStorage.getItem("password"),
         isRemember: localStorage.getItem("isRemember"),
         showSearch: false,
-        showLogin: false
+        showLogin: false,
+        intro: "" // 主页一言
     },
     // ArticleInfo: {
     //
