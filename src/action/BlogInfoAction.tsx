@@ -8,25 +8,9 @@ const getBlogInfo = () => {
         }).then(res => {
             dispatch({
                 type: "getBlogInfo",
-                payload: res.data.data
-            })
-        })
-    }
-}
-
-const getUserInfo = (username, password) => {
-    return (dispatch) => {
-        axios({
-            url: "/api/login",
-            method: "post",
-            params: {
-                username: username,
-                password: password
-            }
-        }).then(res => {
-            dispatch({
-                type: "getUserInfo",
-                payload: res.data.data
+                payload: {
+                    blogInfo: res.data.data
+                }
             })
         })
     }
@@ -41,10 +25,12 @@ const getIntro = () => {
             .then(( hitokoto:any ) => {
                 dispatch({
                     type: "getIntro",
-                    payload: hitokoto
+                    payload: {
+                        hitokoto: hitokoto
+                    }
                 })
             });
     }
 }
 
-export {getBlogInfo, getUserInfo, getIntro}
+export {getBlogInfo, getIntro}

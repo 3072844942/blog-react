@@ -1,14 +1,9 @@
 const infoReducer = (preState, action) => {
-    // const newState = {...preState}
-    const newState = Object.assign({}, preState)
+    const newState = {...preState}
     switch (action.type) {
         case "getBlogInfo":
             newState.isLoading = false
-            newState.blogInfo = action.payload
-            return newState
-
-        case "getUserInfo":
-            newState.userInfo = action.payload
+            newState.blogInfo = action.payload.blogInfo
             return newState
         case "showLogin":
             newState.showLogin = true
@@ -17,7 +12,7 @@ const infoReducer = (preState, action) => {
             newState.showSearch = true
             return newState
         case "getIntro":
-            newState.intro = action.payload
+            newState.intro = action.payload.hitokoto
             return newState
         default:
             return {...preState}

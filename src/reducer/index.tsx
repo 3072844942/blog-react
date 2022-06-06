@@ -2,19 +2,21 @@ import InfoReducer from "./InfoReducer";
 import ArticleReducer from "./ArticleReducer";
 import UserReducer from "./UserReducer";
 
-import {persistReducer, persistStore} from 'redux-persist'
+import {persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import {combineReducers} from "redux";
 
 const persistConfig = {
     key: 'root',
-    storage
+    storage,
+    blacklist: ['BlogInfo', 'ArticleInfo'],
+    whitelist: ['UserInfo']
 }
 
 const reducer = combineReducers({
-    // ArticleInfo: ArticleReducer,
+    ArticleInfo: ArticleReducer,
     BlogInfo: InfoReducer,
-    // UserInfo: UserReducer
+    UserInfo: UserReducer
 })
 const persistedReducer = persistReducer(persistConfig, reducer)
 

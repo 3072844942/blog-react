@@ -5,10 +5,11 @@ import RouterView from "./router/RouterView";
 import Footer from "./contianer/layout/Footer";
 import Menu from "./contianer/menu/Menu";
 import Music from "./contianer/music/Music"
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {Store} from "./redux/store";
 
-import {getBlogInfo, getUserInfo} from './action/BlogInfoAction'
+import {getBlogInfo} from './action/BlogInfoAction'
+import {getUserInfo} from "./action/UserInfoAction";
 import Loading from "./components/loading/Loading";
 import {connect} from "react-redux";
 import Login from "./contianer/login/Login";
@@ -23,7 +24,6 @@ function App(props) {
             if (Store.getState().BlogInfo.isRemember === true)
                 props.login()
         }, 800)
-
     }, [])
 
     return (
@@ -46,7 +46,6 @@ function App(props) {
                     <Footer></Footer>
                 </div>
             }
-            {/*<Loading></Loading>*/}
         </div>
     );
 }

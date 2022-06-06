@@ -67,7 +67,7 @@ function TopNavBar(props) {
                                 <i className="iconfont icondenglu" /> 登录
                             </a>
                         </div> : <div className={["menusItem"].join(' ')}>
-                            <img src={props.avatar} alt={""} style={{width: "30px", borderRadius: "50%", margin: "0 10px 0 10px"}}/>
+                            <img src={props.userInfo.avatar} alt={""} style={{width: "30px", borderRadius: "50%", margin: "0 10px 0 10px"}}/>
                         </div>
 
                     }
@@ -81,8 +81,7 @@ function TopNavBar(props) {
 const mapStateToProps = (state:any) => {
     return {
         blogInfo: state.BlogInfo.blogInfo,
-        // avatar: state.UserInfo.avatar
-        avatar: null
+        userInfo: state.UserInfo.userInfo
     }
 }
 

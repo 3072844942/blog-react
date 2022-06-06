@@ -3,7 +3,7 @@ import * as Loadable from 'react-loadable';
 import {Spin} from "antd";
 
 const Lading = () => (
-    <div>
+    <div style={{textAlign: "center", alignItems: "center", display: "flex"}}>
         <Spin size={"large"} />
         loading
     </div>
