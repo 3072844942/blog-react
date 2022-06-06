@@ -6,7 +6,7 @@ import Footer from "./contianer/layout/Footer";
 import Menu from "./contianer/menu/Menu";
 import Music from "./contianer/music/Music"
 import {useEffect, useState} from "react";
-import Store from "./redux/store";
+import {Store} from "./redux/store";
 
 import {getBlogInfo, getUserInfo} from './action/BlogInfoAction'
 import Loading from "./components/loading/Loading";

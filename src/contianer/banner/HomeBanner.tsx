@@ -22,7 +22,7 @@ function HomeBanner(props) {
             <div className={"homeDiv"}>
                 {/*标题*/}
                 <div className={["homeTitle"].join(' ')}>
-                    <p>{props.websiteName}</p>
+                    {props.websiteName}
                 </div>
                 {/*一言, 利用打字机效果*/}
                 <div className={["homeIntro"].join(' ')}>

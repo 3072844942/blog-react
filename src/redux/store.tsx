@@ -2,6 +2,8 @@ import {configureStore} from "@reduxjs/toolkit";
 import reactThunk from 'redux-thunk'
 import reducer from '../reducer'
 import logger from 'redux-logger'
+import {persistStore} from "redux-persist";
+
 const preloadedState = {
     BlogInfo: {
         blogInfo: null, // 博客信息
@@ -22,10 +24,12 @@ const preloadedState = {
     // }
 }
 
-const store = configureStore({
+const Store = configureStore({
     reducer,
     middleware: [logger, reactThunk],
     preloadedState
 })
 
-export default store
+const persistor = persistStore(Store)
+
+export {Store, persistor}
