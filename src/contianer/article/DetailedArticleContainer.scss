@@ -1,0 +1,58 @@
+.DetailedArticleContainer {
+    height: 250px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 40px 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px 6px rgba(7, 17, 27, .1);
+
+    .left, .right {
+        width: 44%;
+        height: 100%;
+        overflow: hidden;
+        .articleImg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .articleImg:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+
+    .article {
+        width: 56%;
+        padding: 40px 10px 0 40px;
+
+        .articleTitle {
+            font-size: 25px;
+        }
+        .articleInfo {
+            color: gray;
+            a {color: gray;}
+            margin-top: 10px;
+            .separator {
+                margin: 0 8px;
+            }
+        }
+
+        .articleDetail {
+            height: 100px;
+            width: 90%;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+    }
+}
+
+.DetailedArticleContainer:hover {
+    box-shadow: 0 6px 8px 8px rgba(7, 17, 27, .3);
+}
