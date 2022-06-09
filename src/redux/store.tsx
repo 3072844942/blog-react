@@ -10,7 +10,8 @@ const preloadedState = {
         isLoading: true,
         showSearch: false,
         showLogin: false,
-        intro: "" // 主页一言
+        intro: "", // 主页一言
+        talks: []
     },
     ArticleInfo: {
         articleInfo: [], // 主页文章列表

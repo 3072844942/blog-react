@@ -22,7 +22,7 @@ const getIntro = () => {
             .then(res => {
                 return res.json();
             })
-            .then(( hitokoto:any ) => {
+            .then((hitokoto: any) => {
                 dispatch({
                     type: "getIntro",
                     payload: {
@@ -33,4 +33,20 @@ const getIntro = () => {
     }
 }
 
-export {getBlogInfo, getIntro}
+const getTalks = () => {
+    return (dispatch) => {
+        axios({
+            url: "/api/home/talks",
+            method: "get"
+        }).then(res => {
+            dispatch({
+                type: "getTalks",
+                payload: {
+                    talks: res.data.data
+                }
+            })
+        })
+    }
+}
+
+export {getBlogInfo, getIntro, getTalks}

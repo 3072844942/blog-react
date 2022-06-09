@@ -1,0 +1,25 @@
+.Swiper {
+    width: 98%;
+    height: 50px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 0 0 30px 10px;
+    box-shadow: 0 4px 6px 6px rgba(7, 17, 27, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: black;
+
+    .center {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+.Swiper:hover {
+    box-shadow: 0 6px 8px 8px rgba(7, 17, 27, .3);
+    .center {
+        color: #9b59b6;
+    }
+}

@@ -2,6 +2,11 @@ import * as React from 'react';
 
 import './Banner.scss'
 
+/**
+ * 每个页面的小图
+ * @param props
+ * @constructor
+ */
 function Banner(props) {
     return (
         <div className={["Banner"].join(' ')} style={{background: 'url(' + props.pageCover + ') center center / cover no-repeat'}}>

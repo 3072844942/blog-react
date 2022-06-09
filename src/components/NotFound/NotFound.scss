@@ -1,0 +1,45 @@
+.NotFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .NotFoundBody {
+        width: 80%;
+        margin-top: 80px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px 6px rgba(7, 17, 27, .1);
+
+        .font {
+            margin: 60px 0 0 70px;
+            .title {
+                font-size: 30px;
+                color: gray;
+                font-weight: 600;
+            }
+            .sorry {
+                font-size: 40px;
+                font-weight: 800;
+            }
+
+            .listTitle {
+                font-size: 20px;
+                margin: 20px 0 20px 0;
+            }
+
+            .listBody {
+                margin: 40px 0 0 36px;
+                width: 50%;
+                li {
+                    margin-top: 20px;
+                    list-style: katakana;
+                }
+            }
+        }
+
+        .img {
+            width: 100%;
+
+        }
+    }
+}

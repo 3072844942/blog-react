@@ -1,16 +1,12 @@
 .Double {
     width: 80vw;
     margin: 50px auto ;
-    // background-color: aqua;
-    overflow: visible;
 
     display: flex;
-    align-items: center;
     justify-content: center;
 
     .side {
         width: 30%;
-        background-color: white;
     }
 
     .main {

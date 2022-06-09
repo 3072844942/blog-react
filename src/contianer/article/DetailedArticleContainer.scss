@@ -1,8 +1,9 @@
 .DetailedArticleContainer {
-    height: 250px;
+    height: 280px;
     border-radius: 15px;
     background-color: white;
-    margin: 40px 10px;
+    //margin: 40px 10px;
+    margin: 0 12px 30px 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px 6px rgba(7, 17, 27, .1);
 
@@ -49,6 +50,7 @@
             width: 90%;
             overflow: hidden;
             margin-top: 10px;
+            color: black;
         }
     }
 }

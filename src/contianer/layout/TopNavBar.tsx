@@ -3,20 +3,29 @@ import {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 
 import './TopNavBar.scss'
-import '../../assets/css/iconFont.css'
 import {connect} from "react-redux";
 import {showLogin, showSearch} from "../../action/moduleAcion";
+
+import {UserOutlined, HomeOutlined, ContainerOutlined, AppstoreOutlined,
+    TagsOutlined,CameraOutlined, MessageOutlined, CommentOutlined,
+    ShareAltOutlined, SendOutlined} from '@ant-design/icons';
+import Camera from "../../assets/icon/Camera";
 
 function BlogNavLink(props) {
     return (
         <div className={["menusItem"].join(' ')}>
             <NavLink className="menuBtn" to={props.link}>
-                <i className={["iconfont", props.icon].join(' ')} /> {props.name}
+                {props.icon}&nbsp;&nbsp;{props.name}
             </NavLink>
         </div>
     )
 }
 
+/**
+ * 顶部导航栏
+ * @param props
+ * @constructor
+ */
 function TopNavBar(props) {
     const [navClass, setnavClass] = useState("navColorWhite") // black是主要主题, white用于不遮挡banner
     const [show, setshow] = useState("navBarShow")
@@ -42,29 +51,34 @@ function TopNavBar(props) {
     return (
         <div className={["TopNavBar", navClass, show].join(' ')}>
             <div className={["container"].join(' ')}>
+
+                {/*左侧博客名字*/}
                 <div className={["floatLeft"].join(' ')}>
                     <NavLink to={"/"} className={["title"].join(' ')}>{props.blogInfo.websiteConfig.websiteAuthor}</NavLink>
                 </div>
+
+                {/*右侧主要信息*/}
                 <div className={["floatRight", "topRouter"].join(' ')}>
                     <div className={["menusItem"].join(' ')}>
                         <a className="menuBtn" onClick={props.showSearch}>
-                            <i className="iconfont iconsousuo" /> 搜索
+                            <Camera size="14" fill="#333"/> &nbsp;&nbsp;搜索
                         </a>
                     </div>
-                    <BlogNavLink link={"/"} icon={"iconzhuye"} name={"主页"} />
-                    <BlogNavLink link={"/archives"} icon={"iconguidang"} name={"归档"}/>
-                    <BlogNavLink link={"/categories"} icon={"iconfenlei"} name={"分类"}/>
-                    <BlogNavLink link={"/tags"} icon={"iconbiaoqian"} name={"标签"}/>
-                    <BlogNavLink link={"/albums"} icon={"iconxiangce1"} name={"相册"}/>
-                    <BlogNavLink link={"/talks"} icon={"iconpinglun"} name={"说说"}/>
-                    <BlogNavLink link={"/links"} icon={"iconlianjie"} name={"友链"}/>
-                    <BlogNavLink link={"/about"} icon={"iconzhifeiji"} name={"关于"}/>
-                    <BlogNavLink link={"/message"} icon={"iconpinglunzu"} name={"留言"}/>
+                    <BlogNavLink link={"/"} icon={<HomeOutlined />} name={"主页"} />
+                    <BlogNavLink link={"/archives"} icon={<ContainerOutlined />} name={"归档"}/>
+                    <BlogNavLink link={"/categories"} icon={<AppstoreOutlined />} name={"分类"}/>
+                    <BlogNavLink link={"/tags"} icon={<TagsOutlined />} name={"标签"}/>
+                    <BlogNavLink link={"/albums"} icon={<CameraOutlined />} name={"相册"}/>
+                    <BlogNavLink link={"/talks"} icon={<MessageOutlined />} name={"说说"}/>
+                    <BlogNavLink link={"/links"} icon={<ShareAltOutlined />} name={"友链"}/>
+                    <BlogNavLink link={"/about"} icon={<SendOutlined />} name={"关于"}/>
+                    <BlogNavLink link={"/message"} icon={<CommentOutlined />} name={"留言"}/>
 
+                    {/*登录之后显示为用户头像*/}
                     {
                         props.avater === undefined ? <div className={["menusItem"].join(' ')}>
                             <a className="menuBtn" onClick={props.showLogin}>
-                                <i className="iconfont icondenglu" /> 登录
+                                <UserOutlined />&nbsp;&nbsp;登录
                             </a>
                         </div> : <div className={["menusItem"].join(' ')}>
                             <img src={props.userInfo.avatar} alt={""} style={{width: "30px", borderRadius: "50%", margin: "0 10px 0 10px"}}/>

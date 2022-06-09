@@ -14,13 +14,19 @@ import Loading from "./components/loading/Loading";
 import {connect} from "react-redux";
 import Login from "./contianer/login/Login";
 import Search from "./contianer/search/Search";
+import axios from "axios";
 
 function App(props) {
 
     // 这里在创建时获取信息
     useEffect(() => {
+        // 800ms后再运行, 加载一会loading界面
         setTimeout(() => {
+            // 获取博客信息
             props.getBlogInfo()
+            // 上传访客信息
+            axios.post('/api/report')
+            // 如果用户选择了下次自动登录
             if (Store.getState().BlogInfo.isRemember === true)
                 props.login()
         }, 800)

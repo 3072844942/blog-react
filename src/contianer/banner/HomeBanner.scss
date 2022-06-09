@@ -33,11 +33,7 @@
         }
 
         .scrollDown {
-
             animation: upAndDown 3s infinite;
-            .icon {
-                width: 50px;
-            }
         }
     }
 }
@@ -49,19 +45,19 @@
         top: 0;
         opacity: 0.4;
         filter: alpha(opacity=40);
-        margin-top: 320px;
+        margin-top: 300px;
     }
     50% {
         top: -16px;
         opacity: 1;
         filter: none;
-        margin-top: 280px;
+        margin-top: 260px;
     }
     100% {
         top: 0;
         opacity: 0.4;
         filter: alpha(opacity=40);
-        margin-top: 320px;
+        margin-top: 300px;
     }
 }
 
