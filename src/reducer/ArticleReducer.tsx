@@ -3,7 +3,6 @@ const ArticleReducer = (preState, action) => {
     switch (action.type) {
         case "getArticleInfo":
             // 这里有大问题
-
             // 这里是防止严格模式下的多次调用问题, 或者在其他情况下也会使用
             for (let i = 0; i < newState.articleInfo.length; i ++)
                 if (newState.articleInfo[i].id === action.payload.articleInfo[0].id)

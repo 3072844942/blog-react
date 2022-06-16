@@ -3,6 +3,7 @@
     height: 100vh;
     background-size: 100%;
     box-shadow: 0 4px 12px 12px rgba(7, 17, 27, .15);
+
     .homeDiv {
         width: 100%;
         height: 30%;
@@ -29,7 +30,7 @@
         .homeIntro {
             animation: w 4s steps(10) forwards,
             blink 0.3s steps(1) infinite;
-            overflow : hidden;
+            overflow: hidden;
         }
 
         .scrollDown {
@@ -39,52 +40,42 @@
 }
 
 
-
 @keyframes upAndDown {
     0% {
         top: 0;
         opacity: 0.4;
         filter: alpha(opacity=40);
-        margin-top: 300px;
+        margin-top: 20%;
     }
     50% {
         top: -16px;
         opacity: 1;
         filter: none;
-        margin-top: 260px;
+        margin-top: 16%;
     }
     100% {
         top: 0;
         opacity: 0.4;
         filter: alpha(opacity=40);
-        margin-top: 300px;
+        margin-top: 20%;
     }
 }
 
 @keyframes shake {
-
     0%, 100% {
-
         text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
-
     }
 
     25% {
-
         text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
-
     }
 
     50% {
-
         text-shadow: 1.5px -1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
-
     }
 
     75% {
-
         text-shadow: -1.5px 1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
-
     }
 
 }

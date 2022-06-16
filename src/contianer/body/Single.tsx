@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import './Single.scss'
+
 /**
  * 页面的主要部分, 通过single和double来确定是否有侧边栏
  * @param props
@@ -7,7 +9,7 @@ import * as React from 'react';
  */
 function Single(props) {
     return (
-        <div>
+        <div className={'Single'}>
             {props.children}
         </div>
     );

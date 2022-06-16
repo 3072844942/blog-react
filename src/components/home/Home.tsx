@@ -29,10 +29,10 @@ function Home(props) {
                 setPageCover(item.pageCover)
             }
         })
-        if (props.articleInfo.length <= 0) {
-            props.getArticle()
-            props.getTalks()
-        }
+
+        if (props.articleInfo.length <= 0) props.getArticle()
+
+        props.getTalks()
     }, [])
 
     // 启动一个定时器, 每秒对当前运行时间进行修改
