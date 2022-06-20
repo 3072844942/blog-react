@@ -69,6 +69,13 @@ const preloadedState = {
     ArticleInfo: {
         articleInfo: [], // 主页文章列表
         current: 1,
+        archiveInfo: [], // 归档文章列表
+        archiveCurrent: 1,
+        articleCount: 0, // 文章数量
+        categoriesList: [], // 分类列表
+        categoriesCount: 0,
+        tagsList: [], // 标签列表
+        tagsCount: 0,
     },
     UserInfo: {
         userInfo: {}, // 用户信息

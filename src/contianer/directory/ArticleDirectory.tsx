@@ -3,29 +3,31 @@ import {Divider, List, Skeleton} from "antd";
 import {articleInfoInterFace} from "../../redux/store";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useEffect} from "react";
-import {getArticleInfo} from "../../action/ArticleAction";
+import {getArchiveInfo, getArticleInfo} from "../../action/ArticleAction";
 import {connect} from "react-redux";
 import {Timeline} from 'antd';
 import 'antd/dist/antd.css'
-import {HomeOutlined} from "@ant-design/icons";
 import {NavLink} from "react-router-dom";
 
 function ArticleDirectory(props) {
     useEffect(() => {
-        if (props.articleInfo.length <= 0) props.getArticle()
+        if (props.archiveInfo.length <= 0) props.getArticle()
     }, [])
 
     return (
         <InfiniteScroll
-            dataLength={props.articleInfo.length}
+            dataLength={props.archiveInfo.length}
             next={props.getArticle}
-            hasMore={props.articleInfo.length < props.blogInfo.articleCount}
+            hasMore={props.archiveInfo.length < props.blogInfo.articleCount}
             loader={<Skeleton avatar paragraph={{rows: 1}} active/>}
             endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
             scrollableTarget="scrollableDiv"
         >
+            <h1 style={{
+                fontSize: "2.5em",
+            }}>目前共计{props.articleCount}篇文章，继续加油</h1>
             <List
-                dataSource={props.articleInfo}
+                dataSource={props.archiveInfo}
                 renderItem={(item: articleInfoInterFace, index) => (
                     <Timeline mode={index % 2=== 0 ? 'left' : 'right'}>
                         <Timeline.Item label={item.createTime}>
@@ -41,13 +43,14 @@ function ArticleDirectory(props) {
 const mapStateToProps = (state: any) => {
     return {
         blogInfo: state.BlogInfo.blogInfo,
-        articleInfo: state.ArticleInfo.articleInfo
+        archiveInfo: state.ArticleInfo.archiveInfo,
+        articleCount: state.ArticleInfo.articleCount
     }
 }
 
 const mapDispatchToProps = {
     getArticle() {
-        return getArticleInfo()
+        return getArchiveInfo()
     }
 }
 
