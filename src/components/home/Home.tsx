@@ -15,7 +15,7 @@ import AuthorInfo from "../../contianer/info/AuthorInfo";
 import InfoContainer from "../../contianer/info/InfoContainer";
 import {HomeOutlined} from "@ant-design/icons";
 import Swiper from "../../contianer/swiper/Swiper";
-import {getTalks} from "../../action/BlogInfoAction";
+import {getTalk} from "../../action/BlogInfoAction";
 
 function Home(props) {
     const [pageCover, setPageCover] = useState(null)
@@ -120,7 +120,7 @@ const mapDispatchToProps = {
         return getArticleInfo()
     },
     getTalks() {
-        return getTalks()
+        return getTalk()
     }
 }
 

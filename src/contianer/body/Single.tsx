@@ -9,7 +9,9 @@ import './Single.scss'
  */
 function Single(props) {
     return (
-        <div className={'Single'}>
+        <div className={'Single'} style={{
+            minHeight: '40px'
+        }}>
             {props.children}
         </div>
     );

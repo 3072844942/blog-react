@@ -82,6 +82,11 @@ const preloadedState = {
         username: "",
         password: "",
         isRemember: false,
+    },
+    TalkInfo: {
+        current: 1,
+        count: 0,
+        talkList: [] // 说说列表
     }
 }
 

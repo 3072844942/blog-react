@@ -14,7 +14,7 @@ const infoReducer = (preState, action) => {
         case "getIntro":
             newState.intro = action.payload.hitokoto
             return newState
-        case "getTalks":
+        case "getTalk":
             newState.talks = action.payload.talks
             return newState
         default:

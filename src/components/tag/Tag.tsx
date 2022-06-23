@@ -5,6 +5,7 @@ import Banner from "../../contianer/banner/Banner";
 import Single from "../../contianer/body/Single";
 import {getTags} from "../../action/ArticleAction";
 import {NavLink} from "react-router-dom";
+import styled from 'styled-components'
 
 // 单独写一个css我也是没想到
 import './Tag.scss'
@@ -54,7 +55,7 @@ function Tag(props) {
     );
 }
 
-const mapStateToProps = (state:any) => {
+const mapStateToProps = (state: any) => {
     return {
         blogInfo: state.BlogInfo.blogInfo,
         tagsList: state.ArticleInfo.tagsList,

@@ -33,14 +33,14 @@ const getIntro = () => {
     }
 }
 
-const getTalks = () => {
+const getTalk = () => {
     return (dispatch) => {
         axios({
             url: "/api/home/talks",
             method: "get"
         }).then(res => {
             dispatch({
-                type: "getTalks",
+                type: "getTalk",
                 payload: {
                     talks: res.data.data
                 }
@@ -49,4 +49,4 @@ const getTalks = () => {
     }
 }
 
-export {getBlogInfo, getIntro, getTalks}
+export {getBlogInfo, getIntro, getTalk}
