@@ -1,0 +1,38 @@
+.DetailedAlbumContainer {
+    width: 33%;
+    height: 14vw;
+    margin: 0 0 0 20px;
+    overflow: hidden;
+    background: #000;
+
+    .background {
+        width: 110%;
+        height: 110%;
+    }
+
+    .albumWrapper {
+        position: relative;
+        color: #fff !important;
+        top: -280px;
+        left: 20px;
+
+        .albumTitle {
+            font-size: 24px;
+        }
+
+        .albumDesc {
+            opacity: 0;
+        }
+    }
+}
+
+.DetailedAlbumContainer:hover {
+    .background {
+        opacity: .5;
+    }
+    .albumWrapper {
+        .albumDesc {
+            opacity: 1;
+        }
+    }
+}

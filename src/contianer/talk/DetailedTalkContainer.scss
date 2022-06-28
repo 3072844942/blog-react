@@ -1,0 +1,48 @@
+.DetailedTalkContainer {
+    display: flex;
+    overflow: hidden;
+    min-height: 60px;
+    margin-bottom: 16px;
+    padding: 10px 0 0 10px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px 6px rgba(7, 17, 27, .1);
+    .avatar {
+        width: 6%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        img {
+            width: 36px;
+            height: 36px;
+        }
+    }
+    .detailed {
+        color: #000;
+        .nickname {
+            font-size: 20px;
+        }
+        .time {
+            font-size: 14px;
+            color: #8c959f;
+            margin-top: 4px;
+        }
+        .content {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .operation {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            .talkOperation {
+                margin-left: 100px;
+            }
+        }
+    }
+}
+
+.DetailedTalkContainer:hover {
+    box-shadow: 0 6px 8px 8px rgba(7, 17, 27, .3);
+    transform: translateY(-5px);
+}

@@ -21,4 +21,17 @@ const getTalks = () => {
     }
 }
 
-export {getTalks}
+const likeTalk = (id) => {
+    return (dispatch, getState) => {
+        axios({
+            url: "/api/talks/" + id + '/like',
+            method: "post",
+        }).then(res => {
+            dispatch({
+                type: "likeTalk"
+            })
+        })
+    }
+}
+
+export {getTalks, likeTalk}

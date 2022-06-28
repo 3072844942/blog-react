@@ -27,6 +27,10 @@ function Talk(props) {
                         <DetailedTalkContainer {...item}></DetailedTalkContainer>
                     )
                 }
+                {/*占位, 使底部有富裕*/}
+                <div style={{
+                    minHeight: '50px'
+                }}></div>
             </Single>
         </div>
     );

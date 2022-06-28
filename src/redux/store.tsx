@@ -87,6 +87,9 @@ const preloadedState = {
         current: 1,
         count: 0,
         talkList: [] // 说说列表
+    },
+    AlbumInfo: {
+        albumList: [] // 相册列表
     }
 }
 

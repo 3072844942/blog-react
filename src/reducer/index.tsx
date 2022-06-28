@@ -6,6 +6,7 @@ import {persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import {combineReducers} from "redux";
 import TalkReducer from "./TalkReducer";
+import AlbumReducer from "./AlbumReducer";
 
 const persistConfig = {
     key: 'root',
@@ -18,7 +19,8 @@ const reducer = combineReducers({
     ArticleInfo: ArticleReducer,
     BlogInfo: InfoReducer,
     UserInfo: UserReducer,
-    TalkInfo: TalkReducer
+    TalkInfo: TalkReducer,
+    AlbumInfo: AlbumReducer
 })
 const persistedReducer = persistReducer(persistConfig, reducer)
 

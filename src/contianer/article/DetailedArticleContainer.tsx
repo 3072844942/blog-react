@@ -14,10 +14,10 @@ function DetailedArticleContainer(props) {
             {/*文章图片, 奇数时在左, 偶数时在右*/}
             <div className={[props.index % 2 === 0 ? 'left' : 'right'].join(' ')}>
                 <NavLink to={'/articles/' + props.id}>
-                <div className={'articleImg'} style={{
-                    background: 'url(' + props.articleCover + ') center center / cover no-repeat'
-                }}>
-                </div>
+                    <div className={'articleImg'} style={{
+                        background: 'url(' + props.articleCover + ') center center / cover no-repeat'
+                    }}>
+                    </div>
                 </NavLink>
             </div>
             <div className={[props.index % 2 === 1 ? 'left' : 'right', 'article'].join(' ')}>
